@@ -14,6 +14,9 @@ mybtn.addEventListener('click', (event) => {
         const humidity = data.main.humidity;
         const description = data.weather[0].description;
         const temprature = data.main.temp;
+        const celsius = (temprature - 273.15).toFixed(2);
+
+
         const lat = data.coord.lat;
         const lon = data.coord.lon;
 
@@ -33,7 +36,7 @@ mybtn.addEventListener('click', (event) => {
         <div class="weather-item">Wind Speed: ${windSpeed} m/s</div>
         <div class="weather-item">Humidity: ${humidity}%</div>
         <div class="weather-item">Weather: ${description}</div>
-        <div class="weather-item">Temperature: ${temprature} K</div>
+        <div class="weather-item">Temperature: ${celsius} °C</div>
     `;
         
         fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apikey}`)
@@ -70,7 +73,7 @@ fiveDayForecast.forEach(forecast => {
     forecastHtml += `
         <div class="forecast-card">
             <p><strong>Date:</strong> ${forecast.dt_txt.split(" ")[0]}</p>
-            <p><strong>Temperature:</strong> ${forecast.main.temp} K</p>
+            <p><strong>Temperature:</strong> ${forecast.main.temp} °C</p>
            
         </div>`;
 });
