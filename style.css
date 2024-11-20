@@ -12,6 +12,7 @@ body {
     background-attachment: fixed;
     overflow-x: hidden;
     overflow-y: auto;
+    scrollbar-width: none;
 }
 
 h1.h2 {
