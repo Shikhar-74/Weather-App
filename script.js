@@ -78,7 +78,7 @@ fiveDayForecast.forEach(forecast => {
          <div class="forecast-card">
                         <p><strong>Date:</strong> ${forecast.dt_txt.split(" ")[0]}</p>
                         <p><strong>Temperature:</strong> ${(forecast.main.temp - 273.15).toFixed(2)} °C</p>
-                        <p><img src="${iconUrl}" alt="${forecast.weather[0].description}"></p> <!-- Weather Icon -->
+                        <p><img src="${iconUrl}" alt="${forecast.weather[0].description}">
                     </div>`;
 });
         newForecastData.innerHTML = forecastHtml;
